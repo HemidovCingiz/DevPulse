@@ -1,0 +1,74 @@
+# 🚀 DevPulse: Developer Productivity & Time Tracker SaaS
+
+DevPulse is an all-in-one SaaS platform designed for developers to automatically track their coding hours, analyze repository metrics, and visualize their productivity patterns through an interactive dashboard and a dedicated VS Code extension.
+
+---
+
+## ✨ Features
+
+* **⚡ Real-Time Tracking:** VS Code Extension securely streams heartbeat signals to record your active coding intervals.
+* **📊 GitHub Integration:** Fetches and visualizes repository commit histories, branches, and collaboration metrics via GitHub OAuth.
+* **🧩 Interactive Dashboard:** Beautiful frontend analytics build with React and Vite to view your daily, weekly, and monthly productivity charts.
+* **📦 Modern DevOps Architecture:** Fully containerized environment powered by Docker and automated test workflows via GitHub Actions.
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend & Extension
+* **Framework:** React (Vite)
+* **Language:** TypeScript / JavaScript
+* **Styling:** TailwindCSS
+* **IDE Integration:** VS Code Extension API
+
+### Backend & Database
+* **Framework:** FastAPI (Python 3.10)
+* **Database:** PostgreSQL 15
+* **ORM:** SQLAlchemy / Alembic
+
+### DevOps & CI/CD
+* **Containerization:** Docker & Docker Compose
+* **Automation:** GitHub Actions (CI/CD Pipeline)
+
+---
+
+## 🚀 Getting Started (Local Development)
+
+### Prerequisites
+Make sure you have **Docker Desktop** and **Git** installed on your system.
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/YOUR_GITHUB_USERNAME/devpulse.git](https://github.com/YOUR_GITHUB_USERNAME/devpulse.git)
+cd devpulse
+2. Configure Environment Variables
+Create a .env file in the root directory and insert your GitHub OAuth credentials:
+
+Code snippet
+GITHUB_CLIENT_ID=your_github_client_id
+GITHUB_CLIENT_SECRET=your_github_client_secret
+3. Spin up the Containers
+Run the following magic command to build and launch the database, backend, and frontend simultaneously:
+
+Bash
+docker compose up --build
+4. Access the Applications
+Once the build is complete, you can access the services at:
+
+Frontend Dashboard: http://localhost:5173
+
+Backend API (Swagger Docs): http://localhost:8001/docs
+
+PostgreSQL Database Port: 5435 (Internal container port: 5432)
+
+🔒 Production & CI/CD
+This project includes a fully automated GitHub Actions Pipeline (.github/workflows/deploy.yml). On every push or pull request to the main branch, the pipeline automatically:
+
+Provisions an isolated PostgreSQL test instance.
+
+Installs and tests Python and Node.js dependencies.
+
+Builds and verifies Docker production images.
+
+
+---
