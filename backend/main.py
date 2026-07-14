@@ -12,11 +12,10 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], 
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
-    allow_types=["*"] if hasattr(app, "allow_types") else ["*"],
-    allow_headers=["*"],
+    allow_headers=["*"], 
 )
 
 app.include_router(auth.router)
