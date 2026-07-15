@@ -18,7 +18,7 @@ export default function Login(): React.JSX.Element {
     }, [])
 
     const handleLogin = (): void => {
-        window.location.href = 'http://localhost:8001/api/v1/auth/login'
+        window.location.href = 'https://devpulse-1-pxvk.onrender.com/api/v1/auth/login'
     }
 
     return (
