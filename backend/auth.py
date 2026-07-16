@@ -13,7 +13,7 @@ logger = logging.getLogger("uvicorn.error")
 
 GITHUB_CLIENT_ID = os.getenv("GITHUB_CLIENT_ID")
 GITHUB_CLIENT_SECRET = os.getenv("GITHUB_CLIENT_SECRET")
-GITHUB_REDIRECT_URI = "http://localhost:8001/api/v1/auth/callback"
+GITHUB_REDIRECT_URI = os.getenv("REDIRECT_URI", "https://devpulse-1-pxvk.onrender.com/api/v1/auth/callback")
 
 @router.get("/api/v1/auth/login")
 def login_github():
