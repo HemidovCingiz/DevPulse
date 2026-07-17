@@ -69,7 +69,7 @@ async def callback_github(code: str, db: Session = Depends(get_db)):
     db.refresh(user)
 
     FRONTEND_URL = os.getenv("FRONTEND_URL", "https://devpulse-bpnr.onrender.com")
-    return RedirectResponse(url=f"{FRONTEND_URL}/dashboard?user_id={user.id}")
+    return RedirectResponse(url=f"{FRONTEND_URL}/#/dashboard?user_id={user.id}")
 
 @router.get("/api/v1/user/{user_id}/repos")
 async def get_user_repositories(user_id: int, db: Session = Depends(get_db)):
