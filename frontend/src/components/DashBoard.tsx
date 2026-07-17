@@ -50,7 +50,7 @@ export default function DashBoard(): React.JSX.Element {
             return
         }
 
-        fetch(`http://localhost:8001/api/v1/user/${userId}/repos`)
+        fetch(`https://devpulse-1-pxvk.onrender.com/api/v1/user/${userId}/repos`)
             .then((res) => {
                 if (!res.ok) throw new Error('Failed to load tracking analytics')
                 return res.json()
@@ -64,7 +64,7 @@ export default function DashBoard(): React.JSX.Element {
                 setLoading(false)
             })
 
-        fetch(`http://localhost:8001/api/v1/user/${userId}/daily-pulse`)
+        fetch(`https://devpulse-1-pxvk.onrender.com/api/v1/user/${userId}/daily-pulse`)
             .then((res) => res.ok ? res.json() : null)
             .then((data: DailyPulse) => {
                 if (data) setDailyPulse(data)
