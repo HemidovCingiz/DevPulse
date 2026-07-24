@@ -2,7 +2,7 @@ import os
 import time
 import requests
 
-API_URL = os.getenv("API_URL", "https://devpulse-1-pxvk.onrender.com/api/v1")
+API_URL = os.getenv("API_URL", "https://devpulse-1-pxvk.onrender.com/api/v1/track/heartbeat")
 USER_ID = 1
 REPO_NAME = "Realtime-Kanban"
 
